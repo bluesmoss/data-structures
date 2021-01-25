@@ -7,9 +7,6 @@ $purple-color: #6717cd;
 $pink-color: #f313fe;
 $orange-color: #ff9e14;
 
-$reddish : #E74C3C;
-$redder : #C0392B;
-$cloud : #ECF0F1;
 
 // Placeholders
 %flex-row{
@@ -44,6 +41,12 @@ body {
 
 }
 
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
 .wrapper{
     height: 100%;
     display: grid;
@@ -66,12 +69,6 @@ body {
         }
     }
 
-    ul{
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-
     li{
         font-size: 1.5rem;
         height: 100%;
@@ -85,17 +82,22 @@ body {
             font-weight: bold;
             border-left: 2px solid $main-green;
         }
+
+        a{
+            padding-left: 15px;
+        }        
     }
 
     a{
         color: $font-color;
         text-decoration: none;
-        padding-left: 15px;
 
         &:active{
             color: $font-color;
         }
-    }
+    }       
+
+
     
 
     &__credits{
@@ -112,7 +114,7 @@ body {
 }
 
 .content{
-    padding: 10px;
+    overflow-y: hidden;
 }
 
 .font-blue{
@@ -122,3 +124,38 @@ body {
 .font-green{
     @include mixed-font-color($main-green, $orange-color);
 }
+
+.flex-row{
+    @extend %flex-row;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column{
+    @extend %flex-column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    font-size: 2.5rem;
+}
+
+.message{
+    height: 60px;
+    width: 300px;
+    border: 1px solid $main-green;
+    padding: 20px;
+}
+
+.search{
+    border-radius: 500px;
+    padding: 5px 20px;
+    border: 0;
+}
+
+.info-message{
+    background-color: $main-green;
+}
+
+//buttons

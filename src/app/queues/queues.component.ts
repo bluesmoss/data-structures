@@ -11,6 +11,7 @@ export class QueuesComponent implements OnInit {
   newSong: string = '';
   message: string = '';
   showMessage: boolean = false;
+  isPlaying: boolean = false;
   playerMessage: string = 'There is no song playing.'
 
 
@@ -33,9 +34,11 @@ export class QueuesComponent implements OnInit {
 
   dequeue(){
     this.playerMessage = `The queue is empty, add more songs`;
+    this.isPlaying = false;
     if (!this.isEmpty()) {
       let currentSong = this.songs.shift();
-      this.playerMessage = `Playing  ${currentSong}`
+      this.playerMessage = `Playing  ${currentSong}`;
+      this.isPlaying = true;
     }
   }
 

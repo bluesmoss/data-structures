@@ -1,5 +1,7 @@
 <div class="stack">
-
+    <div class="stack__header title">
+       <span class="font-green">Stacks</span>
+    </div>
     <input type="text" [(ngModel)]="newItem">
     <button (click)="push()">Add item</button>
     <button (click)="pop()">Remove item</button>
@@ -8,15 +10,17 @@
     <button (click)="getBottom()">Get bottom</button>
     <button (click)="getSize()">Get stack size</button>
 
-    <div *ngIf="showMessage">
-        <p>{{message}}</p>
-        <button (click)="hideMessage()">OK</button>
+    <div class="stack__message flex-row" *ngIf="showMessage">
+        <div class="message flex-column">
+            <p>{{message}}</p>
+            <button class="btn btn--delta" (click)="hideMessage()">OK</button>            
+        </div>
     </div>
 
     <ul>
         <li *ngIf="items.length===0">The stack is empty</li>
         <li *ngFor="let name of items; index as i">
-            {{i}}.- {{name}} 
+            {{i + 1}}.- {{name}} 
         </li>
     </ul>
 </div>

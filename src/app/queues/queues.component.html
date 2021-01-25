@@ -1,25 +1,43 @@
 <div class="queue">
-    <input type="text" [(ngModel)]="newSong">
-    <button (click)="enqueue()">Add item</button>
-    <button (click)="dequeue()">Remove item</button>
-    <button (click)="verifyEmpty()">Is empty?</button>
-    <button (click)="getTop()">Get top</button>
-    <button (click)="getBottom()">Get bottom</button>
-    <button (click)="getSize()">Get stack size</button>
-
-    <div *ngIf="showMessage">
-        <p>{{message}}</p>
-        <button (click)="hideMessage()">OK</button>
+    <div class="queue__player">
+        <div class="queue__header title">
+            <span class="font-blue">Queues</span>
+        </div>
+        <div class="queue__current flex-column">
+            <img *ngIf="!isPlaying" src="https://media.giphy.com/media/3oriNYvVkCgIhSIKic/source.gif" alt="music">
+            <img *ngIf="isPlaying" src="https://media.giphy.com/media/QWGvlg3ZgXiG0EgUOj/giphy.gif" alt="music">
+            <div class="current__message">
+                {{ playerMessage }}
+            </div>
+        </div>
+        <div class="queue__info flex-column" [ngClass]="{'info-message': showMessage}">
+            <div *ngIf="showMessage" class="flex-row">
+                <span>{{message}}</span>
+                <a class="info__closing" (click)="hideMessage()">OK</a>
+            </div>
+        </div>     
+        <ul class="queue__actions flex-row">
+            <input type="text" class="search" placeholder="Search song..." [(ngModel)]="newSong">
+            <a (click)="enqueue()">Enqueue</a>
+            <a (click)="dequeue()">Next song</a>
+            <a (click)="verifyEmpty()">Is empty?</a>
+            <a (click)="getTop()">Get next song</a>
+            <a (click)="getBottom()">Get last song</a>
+            <a (click)="getSize()">Get queue size</a>
+        </ul>   
     </div>
 
-    <div>
-        {{ playerMessage }}
-    </div>
+    <div class="queue__list">
 
-    <ul>
-        <li *ngIf="songs.length===0">The queue is empty</li>
-        <li *ngFor="let name of songs; index as i">
-            {{i + 1 }}.- {{name}} 
-        </li>
-    </ul>
+        <span>Queue</span>
+        <hr>
+        <ul>
+            <li *ngIf="songs.length===0">The queue is empty</li>
+            <li *ngFor="let name of songs; index as i">
+                {{i + 1 }}.- {{name}} 
+            </li>
+        </ul>
+    </div>    
+
+
 </div>
