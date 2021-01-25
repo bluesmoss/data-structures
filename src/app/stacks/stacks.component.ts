@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StacksComponent implements OnInit {
 
-  items = ['blue', 'red', 'green'];
+  items = ['☕️ blue', '☕️red', '☕️ green', '☕️ purple', '☕️ yellow'];
   newItem: string = '';
-  message: string = 'd';
-  showMessage: boolean = true;
+  message: string = '';
+  showMessage: boolean = false;
 
   constructor() { }
 
@@ -22,7 +22,7 @@ export class StacksComponent implements OnInit {
     this.showMessage = false;
 
     if(this.newItem.trim() != ''){
-      this.items.push(this.newItem);
+      this.items.push(`☕️ ${this.newItem}`);
       this.newItem = '';
     } else {
       this.message = "The new element cannto be empty"

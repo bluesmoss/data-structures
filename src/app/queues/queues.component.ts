@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QueuesComponent implements OnInit {
 
-  songs = ['Circles', 'Magic', 'Bichota'];
+  songs = ['👽 Circles', '🔮 Magic', '💥 Hawai', '🍔 Time', '🏂 Running'];
   newSong: string = '';
   message: string = '';
   showMessage: boolean = false;
@@ -24,7 +24,7 @@ export class QueuesComponent implements OnInit {
     this.showMessage = false;
 
     if(this.newSong.trim() != ''){
-      this.songs.push(this.newSong);
+      this.songs.push(`💚 ${this.newSong}`);
       this.newSong = '';
     } else {
       this.message = "The new song can not be empty"
