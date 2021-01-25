@@ -1,0 +1,25 @@
+<div class="queue">
+    <input type="text" [(ngModel)]="newSong">
+    <button (click)="enqueue()">Add item</button>
+    <button (click)="dequeue()">Remove item</button>
+    <button (click)="verifyEmpty()">Is empty?</button>
+    <button (click)="getTop()">Get top</button>
+    <button (click)="getBottom()">Get bottom</button>
+    <button (click)="getSize()">Get stack size</button>
+
+    <div *ngIf="showMessage">
+        <p>{{message}}</p>
+        <button (click)="hideMessage()">OK</button>
+    </div>
+
+    <div>
+        {{ playerMessage }}
+    </div>
+
+    <ul>
+        <li *ngIf="songs.length===0">The queue is empty</li>
+        <li *ngFor="let name of songs; index as i">
+            {{i + 1 }}.- {{name}} 
+        </li>
+    </ul>
+</div>
