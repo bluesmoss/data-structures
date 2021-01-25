@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { StacksComponent } from './stacks/stacks.component';
 import { QueuesComponent } from './queues/queues.component';
 import { FormsModule } from '@angular/forms';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StacksComponent,
-    QueuesComponent
+    QueuesComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
