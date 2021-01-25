@@ -1,5 +1,5 @@
 $font-color: #FFFFFF;
-$base-color: #212121;
+$base-color: #282828;
 $header-color: #121212;
 $main-green: #21c08B;
 
@@ -55,12 +55,27 @@ body {
     }
 
     li{
-        padding: 5px 5px 5px 15px;
         font-size: 1.5rem;
+        height: 100%;
 
         &:hover{
             cursor: pointer;
             font-weight: bold;
+        }
+
+        .active{
+            font-weight: bold;
+            border-left: 2px solid $main-green;
+        }
+    }
+
+    a{
+        color: $font-color;
+        text-decoration: none;
+        padding-left: 15px;
+
+        &:active{
+            color: $font-color;
         }
     }
     
