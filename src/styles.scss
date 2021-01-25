@@ -141,13 +141,6 @@ ul{
     font-size: 2.5rem;
 }
 
-.message{
-    height: 60px;
-    width: 300px;
-    border: 1px solid $main-green;
-    padding: 20px;
-}
-
 .search{
     border-radius: 500px;
     padding: 5px 20px;
@@ -156,6 +149,13 @@ ul{
 
 .info-message{
     background-color: $main-green;
+}
+
+.info__closing{
+    cursor: pointer;
+    margin-left: 30px;
+    padding: 5px;
+    font-weight: bold;
 }
 
 //buttons

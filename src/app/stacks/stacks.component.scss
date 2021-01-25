@@ -1,0 +1,29 @@
+.stack{
+    padding: 30px;
+
+    &__actions{
+        gap: 10px;
+        justify-content: flex-start;
+    }
+
+    &__message{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: 30px;
+    }
+    
+    &__actions{
+        gap: 5px;
+        a{
+            padding: 5px;
+
+            &:hover{
+                font-weight: bold;
+                cursor: pointer;
+            }
+        }
+    }    
+}
+
+
+

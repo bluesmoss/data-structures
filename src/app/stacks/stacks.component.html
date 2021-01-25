@@ -2,25 +2,34 @@
     <div class="stack__header title">
        <span class="font-green">Stacks</span>
     </div>
-    <input type="text" [(ngModel)]="newItem">
-    <button (click)="push()">Add item</button>
-    <button (click)="pop()">Remove item</button>
-    <button (click)="verifyEmpty()">Is empty?</button>
-    <button (click)="getTop()">Get top</button>
-    <button (click)="getBottom()">Get bottom</button>
-    <button (click)="getSize()">Get stack size</button>
 
-    <div class="stack__message flex-row" *ngIf="showMessage">
-        <div class="message flex-column">
-            <p>{{message}}</p>
-            <button class="btn btn--delta" (click)="hideMessage()">OK</button>            
+    <ul class="stack__actions flex-row">
+        <input type="text" class="search" placeholder="Add new element..." [(ngModel)]="newItem">
+        <a (click)="push()">Add item</a>
+        <a (click)="pop()">Remove item</a>
+        <a (click)="verifyEmpty()">Is empty?</a>
+        <a (click)="getTop()">Get top</a>
+        <a (click)="getBottom()">Get bottom</a>
+        <a (click)="getSize()">Get stack size</a>
+    </ul>
+
+    <div class="stack__message flex-column" [ngClass]="{'info-message': showMessage}">
+        <div *ngIf="showMessage" class="flex-row">
+            <span>{{message}}</span>
+            <a class="info__closing" (click)="hideMessage()">OK</a>          
         </div>
     </div>
 
-    <ul>
-        <li *ngIf="items.length===0">The stack is empty</li>
-        <li *ngFor="let name of items; index as i">
-            {{i + 1}}.- {{name}} 
-        </li>
-    </ul>
+    <div class="stack__list">
+
+        <span>Current Stack</span>
+        <hr>
+        <ul>
+            <li *ngIf="items.length===0">The stack is empty</li>
+            <li *ngFor="let name of items; index as i">
+                {{i + 1}}.- {{name}} 
+            </li>
+        </ul>
+    </div>
+
 </div>

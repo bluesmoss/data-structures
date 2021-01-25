@@ -10,8 +10,8 @@ export class StacksComponent implements OnInit {
 
   items = ['blue', 'red', 'green'];
   newItem: string = '';
-  message: string = '';
-  showMessage: boolean = false;
+  message: string = 'd';
+  showMessage: boolean = true;
 
   constructor() { }
 

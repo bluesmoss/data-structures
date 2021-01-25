@@ -23,6 +23,7 @@ $header-color: #121212;
 
     .current__message{
         padding: 20px;
+        font-size: 2rem;
     }
 
     &__player{
@@ -50,9 +51,3 @@ $header-color: #121212;
     
 }
 
-.info__closing{
-    cursor: pointer;
-    margin-left: 30px;
-    padding: 5px;
-    font-weight: bold;
-}
