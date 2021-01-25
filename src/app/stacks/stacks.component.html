@@ -1,0 +1,22 @@
+<div class="stack">
+
+    <input type="text" [(ngModel)]="newItem">
+    <button (click)="push()">Add item</button>
+    <button (click)="pop()">Remove item</button>
+    <button (click)="verifyEmpty()">Is empty?</button>
+    <button (click)="getTop()">Get top</button>
+    <button (click)="getBottom()">Get bottom</button>
+    <button (click)="getSize()">Get stack size</button>
+
+    <div *ngIf="showMessage">
+        <p>{{message}}</p>
+        <button (click)="hideMessage()">OK</button>
+    </div>
+
+    <ul>
+        <li *ngIf="items.length===0">The stack is empty</li>
+        <li *ngFor="let name of items; index as i">
+            {{i}}.- {{name}} 
+        </li>
+    </ul>
+</div>
