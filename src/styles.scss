@@ -2,8 +2,16 @@ $font-color: #FFFFFF;
 $base-color: #282828;
 $header-color: #121212;
 $main-green: #21c08B;
+$blue-color: #3283d3;
+$purple-color: #6717cd;
+$pink-color: #f313fe;
+$orange-color: #ff9e14;
 
+$reddish : #E74C3C;
+$redder : #C0392B;
+$cloud : #ECF0F1;
 
+// Placeholders
 %flex-row{
     display: flex;
     flex-direction: row;
@@ -13,6 +21,16 @@ $main-green: #21c08B;
 %flex-column{
     display: flex;
     flex-direction: column;
+}
+
+
+//Mixins
+
+@mixin mixed-font-color($primary-color, $secondary-color){
+    background: linear-gradient(to right, $primary-color, $secondary-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
 }
 
 
@@ -91,4 +109,16 @@ body {
         }
     }
 
+}
+
+.content{
+    padding: 10px;
+}
+
+.font-blue{
+    @include mixed-font-color($blue-color, $main-green);
+}
+
+.font-green{
+    @include mixed-font-color($main-green, $orange-color);
 }

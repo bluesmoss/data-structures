@@ -1,0 +1,19 @@
+$main-green: #21c08B;
+
+h1{
+    font-size: 3rem;
+}
+
+p{
+    font-size: 2rem;
+}
+
+.home{
+    text-align: center;
+
+    &__image img{
+        width: 500px;
+        height: 500px;
+        border: 5px solid $main-green;
+    }
+}
