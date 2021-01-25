@@ -59,7 +59,7 @@ export class StacksComponent implements OnInit {
     this.message = `The stack is empty`;
     if (!this.isEmpty()) {
       let bottom = this.items[0];
-      this.message = `The element at the top is: ${bottom}`;
+      this.message = `The element at the bottom is: ${bottom}`;
     }
     this.showMessage = true;
   }
