@@ -1,1 +1,79 @@
-/* You can add global styles to this file, and also import other style files */
+$font-color: #FFFFFF;
+$base-color: #212121;
+$header-color: #121212;
+$main-green: #21c08B;
+
+
+%flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+
+%flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+body {
+    margin: 0px;
+    background: $base-color;
+    height: 100vh;
+    font-family: 'Baloo Thambi 2', cursive;
+    color: $font-color;
+
+}
+
+.wrapper{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 240px auto;
+}
+
+.header{
+    background-color: $header-color;
+    display: grid;
+    grid-template-rows: 120px auto 80px;
+
+    &__title{
+        @extend %flex-column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 10px;
+
+        span{
+            font-size: 2.5rem;
+        }
+    }
+
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li{
+        padding: 5px 5px 5px 15px;
+        font-size: 1.5rem;
+
+        &:hover{
+            cursor: pointer;
+            font-weight: bold;
+        }
+    }
+    
+
+    &__credits{
+        padding: 5px;
+        text-align: center;
+        font-size: 0.8rem;
+
+        .credits__year{
+            font-weight: bold;
+            color: $main-green;
+        }
+    }
+
+}
