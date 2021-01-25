@@ -54,8 +54,8 @@ export class QueuesComponent implements OnInit {
   getTop(){
     this.message = `The queue is empty`;
     if (!this.isEmpty()) {
-      let top = this.songs[this.songs.length -1];
-      this.message = `The element at the top is: ${top}`;
+      let top = this.songs[0];
+      this.message = `The next song is: ${top}`;
     }
     this.showMessage = true;
   }
@@ -63,8 +63,8 @@ export class QueuesComponent implements OnInit {
   getBottom(){
     this.message = `The queue is empty`;
     if (!this.isEmpty()) {
-      let bottom = this.songs[0];
-      this.message = `The element at the top is: ${bottom}`;
+      let bottom = this.songs[this.songs.length - 1];
+      this.message = `The last song in the queue is: ${bottom}`;
     }
     this.showMessage = true;
   }
